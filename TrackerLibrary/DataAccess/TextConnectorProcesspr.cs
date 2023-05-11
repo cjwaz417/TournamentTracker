@@ -104,7 +104,7 @@ namespace TrackerLibrary.DataAccess.TextHelper
             {
                 lines.Add($"{p.Id},{p.FirstName},{p.LastName},{p.EmaiLAddress},{p.CellPhoneNumber}");
             }
-
+            
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 

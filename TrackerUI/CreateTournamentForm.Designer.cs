@@ -125,6 +125,7 @@
             CreateNewTeamLink.TabIndex = 15;
             CreateNewTeamLink.TabStop = true;
             CreateNewTeamLink.Text = "Create New Team";
+            CreateNewTeamLink.LinkClicked += CreateNewTeamLink_LinkClicked;
             // 
             // AddTeamButton
             // 
@@ -154,6 +155,7 @@
             CreatePrizeButton.TabIndex = 17;
             CreatePrizeButton.Text = "Create Prize";
             CreatePrizeButton.UseVisualStyleBackColor = true;
+            CreatePrizeButton.Click += CreatePrizeButton_Click;
             // 
             // TournamentPlayersListBox
             // 
@@ -164,6 +166,7 @@
             TournamentPlayersListBox.Name = "TournamentPlayersListBox";
             TournamentPlayersListBox.Size = new Size(346, 152);
             TournamentPlayersListBox.TabIndex = 18;
+            TournamentPlayersListBox.SelectedIndexChanged += TournamentPlayersListBox_SelectedIndexChanged;
             // 
             // TournamentPlayersLabel
             // 
@@ -188,6 +191,7 @@
             DeleteSelectedPlayersButton.TabIndex = 20;
             DeleteSelectedPlayersButton.Text = "Delete Selected";
             DeleteSelectedPlayersButton.UseVisualStyleBackColor = true;
+            DeleteSelectedPlayersButton.Click += DeleteSelectedPlayersButton_Click;
             // 
             // DeleteSelectedPrizeButton
             // 
@@ -202,6 +206,7 @@
             DeleteSelectedPrizeButton.TabIndex = 23;
             DeleteSelectedPrizeButton.Text = "Delete Selected";
             DeleteSelectedPrizeButton.UseVisualStyleBackColor = true;
+            DeleteSelectedPrizeButton.Click += DeleteSelectedPrizeButton_Click;
             // 
             // PrizesLabel
             // 
@@ -209,9 +214,9 @@
             PrizesLabel.Location = new Point(384, 328);
             PrizesLabel.Margin = new Padding(4, 0, 4, 0);
             PrizesLabel.Name = "PrizesLabel";
-            PrizesLabel.Size = new Size(197, 30);
+            PrizesLabel.Size = new Size(67, 30);
             PrizesLabel.TabIndex = 22;
-            PrizesLabel.Text = "Tournament/Players";
+            PrizesLabel.Text = "Prizes";
             // 
             // PrizesListBox
             // 
@@ -236,6 +241,7 @@
             CreateTournamentButton.TabIndex = 24;
             CreateTournamentButton.Text = "Create Tournament";
             CreateTournamentButton.UseVisualStyleBackColor = true;
+            CreateTournamentButton.Click += CreateTournamentButton_Click;
             // 
             // CreateTournamentForm
             // 
@@ -268,6 +274,31 @@
             Load += CreateTournamentForm_Load;
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void CreateTournamentForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TournamentPlayersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addTeamLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RondDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void teamOneScoreLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion

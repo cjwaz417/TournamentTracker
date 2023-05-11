@@ -70,7 +70,7 @@ namespace TrackerLibrary
 
             teams.Add(model);
 
-            teams.SaveToTeamModel(TeamFile);
+            //teams.SaveToTeamModel(TeamFile);
 
             return model;
         }
@@ -80,6 +80,11 @@ namespace TrackerLibrary
             return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModel();
 
 
+        }
+
+        public List<TeamModel> GetTeam_All()
+        {
+            throw new NotImplementedException();
         }
     }
 }

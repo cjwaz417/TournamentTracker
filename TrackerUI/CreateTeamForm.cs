@@ -15,11 +15,14 @@ namespace TrackerUI
     {
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
-        public CreateTeamForm()
+
+        private ITeamRequester callingform;
+        public CreateTeamForm(ITeamRequester caller)
         {
             InitializeComponent();
             //CreateSampleData();
             WireUpLists();
+            callingform = caller;
         }
 
         private void WireUpLists()
@@ -33,6 +36,8 @@ namespace TrackerUI
 
             TeamMembersListBox.DataSource = selectedTeamMembers;
             TeamMembersListBox.DisplayMember = "FullName";
+
+           
         }
 
 
@@ -64,25 +69,6 @@ namespace TrackerUI
             }
 
         }
-
-        private void AddTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void teamOneScoreText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FirstNameLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void AddNewMemberGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void CreateMemberButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -133,11 +119,6 @@ namespace TrackerUI
 
         }
 
-        private void TeamMembersListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void RenoveSelectedMemberButton_Click(object sender, EventArgs e)
         {
             PersonModel p = (PersonModel)TeamMembersListBox.SelectedItem;
@@ -161,7 +142,15 @@ namespace TrackerUI
             t.TeamName = TeamNameValue.Text;
             t.TeamMembers = selectedTeamMembers;
 
-            t = GlobalConfig.Connection.CreateTeam(t);
+            GlobalConfig.Connection.CreateTeam(t);
+
+            callingform.TeamComplete(t);
+            this.Close();
+        }
+
+        private void numListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -302,6 +302,31 @@
             PerformLayout();
         }
 
+        private void TeamMembersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void FirstNameLabel_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddNewMemberGroupBox_Enter(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void teamOneScoreText_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private TextBox TeamNameValue;
